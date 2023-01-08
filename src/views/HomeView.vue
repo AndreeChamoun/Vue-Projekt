@@ -1,9 +1,8 @@
 <script>
-  import HelloWorld from '../components/HelloWorld.vue'
 
   export default {
     components: {
-      HelloWorld,
+
     },
     data() {
       return {
@@ -22,7 +21,7 @@
 <template>
 <div>
   <input type="text" placeholder="Input name" v-model.lazy="name" />
-  <h1 >Hi and welcome to my page {{onClick()}}</h1>
+  <h1>Hi and welcome to my page {{onClick()}}</h1>
 </div>
   <div id="center_text">
     <p :class="{ n }"></p>
