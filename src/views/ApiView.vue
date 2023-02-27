@@ -1,39 +1,34 @@
 <script>
-  import HamstersList from '../components/HamstersList.vue'
-  export default {
-    components: {
-      HamstersList
-    },
-    data() {
-      return { error: false }
-    },
-  }
+import ApiList from "../components/ApiList.vue";
+
+export default {
+  components: {
+    ApiList,
+  },
+  data() {
+    return { error: false };
+  },
+};
 </script>
 
 <template>
-  <h1>Simple API</h1>
-  <p v-if="error">Something went wrong!!!</p>
-  <div v-else id="center_text">
-    <p>
-      This is a simple fetch from a test API <br>
-      I decided to only show 10 of them for the page to look much more clean but
-      still showing the results. I made this API for the fullstack portion of my education.
-    </p>
-  </div>
-    <HamstersList />
+  <p v-if="error">Error</p>
+  <div v-else id="content"><ApiList /></div>
 </template>
 
-<style >
-  p {
-    text-align: left;
-    width: 500px;
-    font-size: 28px;
-  }
-  #center_text {
-    display: flex;
-    justify-content: center;
-  }
-  li {
-    font-size: 25px;
-  }
+<style lang="scss">
+$api-font-size: 25px;
+p {
+  text-align: left;
+  width: 100%;
+  font-size: 28px;
+}
+#content {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+li {
+  font-size: $api-font-size;
+}
 </style>
