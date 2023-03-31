@@ -1,9 +1,9 @@
 <script>
   export default {
     props: {
-      msg: {
+      title: {
         type: String,
-        default: 'Hi and Welcome to my home page!'
+        default: ''
       }
     }
   }
@@ -16,5 +16,5 @@
 </style>
 
 <template>
-  <p>{{ msg }}</p>
+  <p>{{ title }}</p>
 </template>

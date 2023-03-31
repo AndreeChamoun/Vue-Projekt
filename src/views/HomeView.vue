@@ -3,7 +3,7 @@ export default {
   components: {},
   data() {
     return {
-      n: true,
+      intro: true,
       name: "",
     };
   },
@@ -18,10 +18,10 @@ export default {
 <template>
   <div>
     <input type="text" placeholder="Input name" v-model.lazy="name" />
-    <h1>Hi and welcome to my page {{ onClick() }}</h1>
+    <h1>Welcome, {{ onClick() }}</h1>
   </div>
   <div id="center_text">
-    <p :class="{ n }"></p>
+    <p :class="{ intro }"></p>
   </div>
 </template>
 
