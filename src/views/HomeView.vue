@@ -1,27 +1,27 @@
 <script>
 export default {
-  components: {},
   data() {
     return {
-      intro: true,
+      welcome: true,
       name: "",
     };
   },
-  methods: {
-    onClick() {
-      return this.name;
+  computed: {
+    intro: function () {
+      return "Welcome," + this.name;
     },
   },
 };
 </script>
 
 <template>
-  <div>
-    <input type="text" placeholder="Input name" v-model.lazy="name" />
-    <h1>Welcome, {{ onClick() }}</h1>
-  </div>
   <div id="center_text">
-    <p :class="{ intro }"></p>
+    <input type="text" placeholder="Input your name" v-model.lazy="name" />
+
+    <p :class="{ welcome }">
+      Welcome,
+      {{ name }}!
+    </p>
   </div>
 </template>
 
@@ -32,7 +32,12 @@ export default {
   font-size: 28px;
 }
 #center_text {
+  max-width: 30%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+}
+.welcome {
+  width: 100%;
 }
 </style>

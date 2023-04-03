@@ -1,21 +1,23 @@
 <script>
+import HelloWorld from "./components/HelloWorld.vue";
 export default {
-  components: {},
+  components: {
+    HelloWorld,
+  },
 };
 </script>
 
 <template>
-  <header>Welcome</header>
-
-  <nav>
-    <RouterLink to="/">Home</RouterLink>
-
-    <RouterLink to="/about">About</RouterLink>
-
-    <RouterLink to="/api">API</RouterLink>
-  </nav>
-
-  <RouterView />
+  <header>
+    <HelloWorld title="Generate Memes" />
+    <nav>
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/api">API</RouterLink>
+    </nav>
+  </header>
+  <main>
+    <RouterView />
+  </main>
 </template>
 
 <style lang="scss">
@@ -26,6 +28,7 @@ body {
   overflow-x: hidden;
 }
 header {
+  display: flex;
   width: 100%;
   padding: 25px;
   margin: -8px;
@@ -49,5 +52,9 @@ nav a {
 .router-link-exact-active {
   color: white;
   background: $menu-color;
+}
+main {
+  display: flex;
+  justify-content: center;
 }
 </style>
